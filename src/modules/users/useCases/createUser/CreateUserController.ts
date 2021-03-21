@@ -14,7 +14,9 @@ class CreateUserController {
       return response.status(201).json(user);
     } catch (err) {
       console.log(err.message);
-      return response.status(400).json({ error: "User already exists" });
+      return response
+        .status(400)
+        .json({ error: "User already exists with this email" });
     }
   }
 }
